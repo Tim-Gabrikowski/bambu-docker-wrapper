@@ -9,8 +9,8 @@ The image is based on **Ubuntu 22.04** and bundles all dependencies required for
 Clone this repository and build the image:
 
 ```bash
-git clone https://github.com/yourusername/bambu-studio-cli-docker.git
-cd bambu-studio-cli-docker
+git clone https://github.com/Tim-Gabrikowski/bambu-docker-wrapper.git
+cd bambu-docker-wrapper
 docker build -t bambu-cli .
 ```
 
@@ -27,6 +27,8 @@ To run on Windows, you might have to change the volume mount to use an absolute 
 ```PowerShell
 docker run --rm -v "${PWD}:/data" bambu-cli [options] [file]
 ```
+
+CLI arguments after `bambu-cli` are passed directly to the Bambu Studio executable. For a usage description and explanation, refer to `--help` command or the (maybe not fully up to date) [Bambu Studio Wiki](https://github.com/bambulab/BambuStudio/wiki/Command-Line-Usage).
 
 ## Example Commands
 
@@ -50,7 +52,6 @@ docker run --rm -v "${PWD}:/data" bambu-cli \
 
 - `/data/input.stl` -> your input model
 - `/data/output.3mf` -> sliced/exported output
-- CLI arguments after `bambu-cli` are passed directly to the Bambu Studio executable. (See `--help`)
 
 ## Notes
 
@@ -62,5 +63,7 @@ docker run --rm -v "${PWD}:/data" bambu-cli \
 ## License
 
 This repository only provides a Docker wrapper build script.
+
 Bambu Studio itself is released under [AGPLv3](https://github.com/bambulab/BambuStudio/blob/master/LICENSE).
+
 Please check the official [Bambu Studio repository](https://github.com/bambulab/BambuStudio) for licensing details.
